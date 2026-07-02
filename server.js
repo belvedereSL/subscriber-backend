@@ -87,7 +87,7 @@ app.post("/api/webhook/contentful", async (req, res) => {
       subject: `New Update: ${title}`,
       html: `<h1>${title}</h1><p>${content}</p>`,
       audienceId: process.env.RESEND_AUDIENCE_ID, // Use the ID from your .env
-      // send: true, // Set to true to send immediately
+      send: true, // Set to true to send immediately
     });
 
     console.log("Broadcast created:", broadcast);
